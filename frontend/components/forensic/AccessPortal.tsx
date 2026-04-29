@@ -106,7 +106,7 @@ export const AccessPortal = () => {
         {/* Continue with Google */}
         <motion.button
           type="button"
-          onClick={handleGoogleLogin}
+          onClick={() => handleGoogleLogin()}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}
           className="relative flex w-full items-center justify-center gap-3 overflow-hidden border border-primary/40 bg-primary/5 px-5 py-3 font-display text-xs font-bold tracking-widest text-primary transition-all hover:bg-primary/10"
