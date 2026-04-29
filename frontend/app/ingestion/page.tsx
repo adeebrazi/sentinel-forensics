@@ -377,8 +377,8 @@ export default function ForensicIngestion() {
 
 // Update GlobeMethods type with specific types
 interface GlobeMethods {
-  controls: () => THREE.OrbitControls; // Replace 'any' with the specific type
-  scene: () => THREE.Scene; // Replace 'any' with the specific type
+  controls: () => any;
+  scene: () => any;
   pointOfView: (
     view: { lat: number; lng: number; altitude: number },
     duration: number,
