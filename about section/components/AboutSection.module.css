@@ -1,0 +1,169 @@
+.aboutSection {
+  padding: 1rem 1.5rem 3rem;
+  background: transparent;
+  color: #e0e6ff;
+  position: relative;
+  z-index: 2;
+}
+
+.topSection {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.infoBlock {
+  max-width: 720px;
+}
+
+.topSection h2,
+.teamHeading h2,
+.clubSection h3 {
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  margin: 0 0 1.1rem;
+  color: #00d9ff;
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  font-weight: 700;
+}
+
+.topSection p,
+.clubSection p,
+.memberInfo p {
+  line-height: 1.8;
+  color: #b0b8d8;
+}
+
+.clubSection {
+  max-width: 940px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.8), rgba(20, 30, 60, 0.8));
+  border-radius: 8px;
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.1), inset 0 0 30px rgba(0, 217, 255, 0.05);
+}
+
+.teamSection {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamHeading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.teamLabel {
+  display: inline-block;
+  color: #00d9ff;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.teamGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.memberCard {
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.7), rgba(20, 30, 60, 0.7));
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.1), inset 0 0 20px rgba(0, 217, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.memberCard:hover {
+  border-color: rgba(0, 217, 255, 0.6);
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.2), inset 0 0 30px rgba(0, 217, 255, 0.05);
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  border-bottom: 2px solid rgba(0, 217, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), transparent);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.memberInfo {
+  padding: 1.5rem;
+}
+
+.memberInfo h4 {
+  margin: 0 0 0.35rem;
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.memberRole {
+  margin: 0 0 1rem;
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(0, 217, 255, 0.1);
+  color: #00d9ff;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  font-size: 18px;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 217, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.12);
+  color: #00ffff;
+}
+
+.socialLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footerNote {
+  text-align: center;
+  margin-top: 3rem;
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .aboutSection {
+    padding: 3rem 1rem;
+  }
+
+  .topSection {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+backend/venv/
+backend/__pycache__/
+
+# Environment
+.env
+.env.local
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Forensic Data / Media
+backend/storage/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# OS Files
+.DS_Store
+Thumbs.db

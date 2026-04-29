@@ -1,0 +1,9 @@
+PROJECT: Forensic Video Intelligence Portal
+-------------------------------------------
+STYLING:
+1. Merge the 'extend' object from the provided tailwind.config.ts into the main config.
+2. Import the HSL variables from index.css into the global styles.
+
+DEPENDENCIES:
+Please run the following command in the main project:
+npm install framer-motion lucide-react clsx tailwind-merge tailwindcss-animate
