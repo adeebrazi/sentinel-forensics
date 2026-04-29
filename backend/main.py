@@ -27,8 +27,20 @@ STORAGE_DIR = "storage"
 if not os.path.exists(STORAGE_DIR):
     os.makedirs(STORAGE_DIR)
 
-client = AsyncIOMotorClient(settings.MONGO_URI)
-db = client[settings.DB_NAME]
+client = None
+db = None
+
+@app.on_event("startup")
+async def startup_db_client():
+    global client, db
+    client = AsyncIOMotorClient(settings.MONGO_URI)
+    db = client[settings.DB_NAME]
+    print("Connected to MongoDB!")
+
+@app.on_event("shutdown")
+async def shutdown_db_client():
+    if client:
+        client.close()
 
 SECRET_MARKER = b"---SENTINEL-SIG---"
 DEBUG_MODE = False 
