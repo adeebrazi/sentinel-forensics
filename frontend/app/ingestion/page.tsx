@@ -173,38 +173,21 @@ export default function ForensicIngestion() {
       globe.pointOfView({ lat: 20, lng: 78, altitude: 2.2 }, 2000);
 
       sequenceTimeout = setTimeout(() => {
-        controls.enableZoom = false;
-        controls.enablePan = false;
-        controls.enableRotate = true;
-
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 1.5;
-
-        const handleStart = () => {
-          clearTimeout(interactionTimeout);
-          clearTimeout(resumeRotationTimeout);
-          controls.autoRotate = false;
-        };
-
-        const handleEnd = () => {
-          interactionTimeout = setTimeout(() => {
-            globe.pointOfView({ lat: 20, lng: 78, altitude: 2.2 }, 1500);
-            resumeRotationTimeout = setTimeout(() => {
-              controls.autoRotate = true;
-            }, 1600);
-          }, 2000);
-        };
-
-        controls.addEventListener("start", handleStart);
-        controls.addEventListener("end", handleEnd);
-      }, 2100);
+        if (globeRef.current) {
+           const currentControls = globeRef.current.controls();
+           if (currentControls) {
+             currentControls.autoRotate = true;
+             currentControls.autoRotateSpeed = 2.5; // Increased speed
+             currentControls.enableZoom = false;
+           }
+        }
+      }, 2500);
     };
 
-    setTimeout(initGlobe, 500);
+    const initTimeout = setTimeout(initGlobe, 500);
 
     return () => {
-      clearTimeout(interactionTimeout);
-      clearTimeout(resumeRotationTimeout);
+      clearTimeout(initTimeout);
       clearTimeout(sequenceTimeout);
     };
   }, []);
