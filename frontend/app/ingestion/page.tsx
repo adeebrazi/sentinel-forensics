@@ -17,7 +17,7 @@ import {
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
 export default function ForensicIngestion() {
-  const globeRef = useRef<GlobeMethods | null>(null);
+  const globeRef = useRef<any>(null);
   const router = useRouter();
 
   // --- INGESTION LOGIC STATE ---
