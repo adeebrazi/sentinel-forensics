@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00d2ff;
+  --color-hacker-bg: #010816;
+}
+
+:root {
+  --font-mono: 'JetBrains Mono', monospace;
+  --background: #010816;
+  --foreground: #e2e8f0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+/* --- ALPHA STAGE UI COMPONENTS --- */
+
+@utility hacker-card {
+  background: rgba(2, 12, 27, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 210, 255, 0.15);
+  /* Hexagonal cut corner effect */
+  clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+  position: relative;
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.05);
+  }
+}
+
+@utility neon-glow {
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.7);
+}
+
+@utility curved-header {
+  border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+@utility data-label {
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(0, 210, 255, 0.6);
+}
+
+/* REGISTER YOUR CUSTOM FONT HERE */
+@font-face {
+  font-family: 'Corpta';
+  src: url('/Corpta\ DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-corpta {
+  font-family: 'Corpta', sans-serif;
+}
+
+/* Your existing custom classes... */
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #164e63; border-radius: 10px; }@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Forensic Video Intelligence System - Design System
+   Cyber-forensic / classified government aesthetic
+   All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Core forensic palette */
+    --background: 195 100% 3%;
+    --foreground: 180 100% 92%;
+
+    --card: 195 80% 5%;
+    --card-foreground: 180 100% 92%;
+
+    --popover: 195 80% 5%;
+    --popover-foreground: 180 100% 92%;
+
+    /* Cyan primary - the sentinel glow */
+    --primary: 184 100% 52%;
+    --primary-foreground: 195 100% 4%;
+    --primary-glow: 184 100% 65%;
+    --primary-deep: 192 100% 38%;
+
+    --secondary: 195 60% 10%;
+    --secondary-foreground: 184 100% 70%;
+
+    --muted: 195 50% 8%;
+    --muted-foreground: 184 30% 55%;
+
+    --accent: 184 100% 52%;
+    --accent-foreground: 195 100% 4%;
+
+    --destructive: 0 95% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 100% 55%;
+    --success: 142 76% 50%;
+
+    --border: 184 70% 18%;
+    --input: 184 70% 14%;
+    --ring: 184 100% 52%;
+
+    --radius: 0.25rem;
+
+    /* Forensic gradients */
+    --gradient-portal: linear-gradient(135deg, hsl(184 100% 52% / 0.15), hsl(192 100% 38% / 0.05));
+    --gradient-bg: radial-gradient(ellipse at center, hsl(195 80% 6%) 0%, hsl(200 100% 2%) 70%);
+    --gradient-cta: linear-gradient(135deg, hsl(192 100% 42%), hsl(184 100% 52%));
+
+    /* Glows & shadows */
+    --glow-cyan: 0 0 20px hsl(184 100% 52% / 0.5), 0 0 40px hsl(184 100% 52% / 0.2);
+    --glow-cyan-soft: 0 0 12px hsl(184 100% 52% / 0.35);
+    --glow-panel: 0 0 60px hsl(184 100% 52% / 0.15), inset 0 0 30px hsl(184 100% 52% / 0.04);
+
+    --sidebar-background: 195 80% 5%;
+    --sidebar-foreground: 184 100% 70%;
+    --sidebar-primary: 184 100% 52%;
+    --sidebar-primary-foreground: 195 100% 4%;
+    --sidebar-accent: 195 60% 10%;
+    --sidebar-accent-foreground: 184 100% 70%;
+    --sidebar-border: 184 70% 18%;
+    --sidebar-ring: 184 100% 52%;
+  }
+
+  .dark {
+    --background: 195 100% 3%;
+    --foreground: 180 100% 92%;
+    --card: 195 80% 5%;
+    --card-foreground: 180 100% 92%;
+    --popover: 195 80% 5%;
+    --popover-foreground: 180 100% 92%;
+    --primary: 184 100% 52%;
+    --primary-foreground: 195 100% 4%;
+    --secondary: 195 60% 10%;
+    --secondary-foreground: 184 100% 70%;
+    --muted: 195 50% 8%;
+    --muted-foreground: 184 30% 55%;
+    --accent: 184 100% 52%;
+    --accent-foreground: 195 100% 4%;
+    --destructive: 0 95% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 184 70% 18%;
+    --input: 184 70% 14%;
+    --ring: 184 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  box-sizing: border-box;
+  }
+
+  html, body, #root {
+    background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: hsl(var(--primary));
+    border-style: solid;
+  }
+  .corner-frame::before {
+    top: -1px; left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+  .corner-frame::after {
+    bottom: -1px; right: -1px;
+    border-width: 0 1px 1px 0;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 12px hsl(var(--primary) / 0.7), 0 0 24px hsl(var(--primary) / 0.35);
+  }
+
+  .scanline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      hsl(var(--primary) / 0.025) 3px,
+      hsl(var(--primary) / 0.025) 4px
+    );
+    mix-blend-mode: overlay;
+  }
+}
+
+@layer utilities {
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    letter-spacing: 0.05em;
+  }
+  .font-display {
+    font-family: 'Orbitron', 'JetBrains Mono', ui-monospace, monospace;
+    letter-spacing: 0.15em;
+  }
+}
+
+@keyframes pulse-cyan {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px hsl(var(--primary) / 0.8); }
+  50% { opacity: 0.5; box-shadow: 0 0 12px hsl(var(--primary) / 1); }
+}
+.animate-pulse-cyan { animation: pulse-cyan 2s ease-in-out infinite; }
+
+@keyframes scan-sweep {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+.animate-scan-sweep { animation: scan-sweep 4s linear infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+.animate-spin-reverse { animation: spin-slow 45s linear infinite reverse; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+}
+.animate-flicker { animation: flicker 6s linear infinite; }
+
